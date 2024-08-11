@@ -1,6 +1,5 @@
 package com.example.coinapp.presentation.mainscreen.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,18 +16,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.coinapp.R
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
+import com.example.coinapp.presentation.model.CoinsUiModel
 import com.example.coinapp.ui.theme.robotoFont
 
 @Composable
-fun CoinItem() {
+fun CoinItem(item: CoinsUiModel) {
+
+    val context = LocalContext.current
+
     Card(
         modifier = Modifier.fillMaxWidth(),
         onClick = { /*TODO*/ },
@@ -38,9 +40,9 @@ fun CoinItem() {
         Row(
             modifier = Modifier.padding(horizontal = 5.dp)
         ) {
-            Image(
+            AsyncImage(
                 modifier = Modifier.size(40.dp),
-                imageVector = ImageVector.vectorResource(id = R.drawable.icon_coin_error),
+                model = ImageRequest.Builder(context).data(item.image).build(),
                 contentDescription = ""
             )
             Spacer(modifier = Modifier.width(5.dp))
@@ -48,7 +50,7 @@ fun CoinItem() {
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = "Bitcoin",
+                    text = item.name,
                     style = TextStyle(
                         color = Color.Black,
                         fontFamily = robotoFont,
@@ -57,7 +59,7 @@ fun CoinItem() {
                     )
                 )
                 Text(
-                    text = "BTC",
+                    text = item.symbol,
                     style = TextStyle(
                         color = Color.Gray,
                         fontFamily = robotoFont,
@@ -69,7 +71,7 @@ fun CoinItem() {
             Spacer(modifier = Modifier.weight(1f))
             Column {
                 Text(
-                    text = "₽ 2,446,730.40",
+                    text = item.currentPrice,
                     style = TextStyle(
                         color = Color.Black,
                         fontFamily = robotoFont,
@@ -79,7 +81,7 @@ fun CoinItem() {
                 )
                 Text(
                     modifier = Modifier.align(Alignment.End),
-                    text = "+ 4.05%",
+                    text = item.priceChangePercentage24h,
                     style = TextStyle(
                         color = Color.Gray,
                         fontFamily = robotoFont,
@@ -90,10 +92,4 @@ fun CoinItem() {
             }
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewCoinItem() {
-    CoinItem()
 }

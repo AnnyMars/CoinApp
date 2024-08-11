@@ -25,7 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.coinapp.R
-import com.example.coinapp.presentation.mainscreen.components.MainToolBar
 import com.example.coinapp.ui.theme.robotoFont
 
 @Composable
@@ -57,7 +56,6 @@ fun CoinErrorScreen() {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        MainToolBar()
         Spacer(modifier = Modifier.weight(0.5f))
         Image(
             imageVector = ImageVector.vectorResource(id = R.drawable.icon_coin_error),
