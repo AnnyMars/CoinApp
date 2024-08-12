@@ -1,47 +1,44 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.Contextual
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
+import java.math.BigDecimal
 
-@Serializable
 data class Ticker(
-    @SerialName("base")
+    @SerializedName("base")
     val base: String,
-    @SerialName("bid_ask_spread_percentage")
-    val bidAskSpreadPercentage: Double,
-    @SerialName("coin_id")
+    @SerializedName("bid_ask_spread_percentage")
+    val bidAskSpreadPercentage: BigDecimal,
+    @SerializedName("coin_id")
     val coinId: String,
-    @SerialName("converted_last")
+    @SerializedName("converted_last")
     val convertedLast: ConvertedLast,
-    @SerialName("converted_volume")
+    @SerializedName("converted_volume")
     val convertedVolume: ConvertedVolume,
-    @SerialName("is_anomaly")
+    @SerializedName("is_anomaly")
     val isAnomaly: Boolean,
-    @SerialName("is_stale")
+    @SerializedName("is_stale")
     val isStale: Boolean,
-    @SerialName("last")
-    val last: Double,
-    @SerialName("last_fetch_at")
+    @SerializedName("last")
+    val last: BigDecimal,
+    @SerializedName("last_fetch_at")
     val lastFetchAt: String,
-    @SerialName("last_traded_at")
+    @SerializedName("last_traded_at")
     val lastTradedAt: String,
-    @SerialName("market")
+    @SerializedName("market")
     val market: Market,
-    @SerialName("target")
+    @SerializedName("target")
     val target: String,
-    @SerialName("target_coin_id")
+    @SerializedName("target_coin_id")
     val targetCoinId: String,
-    @SerialName("timestamp")
+    @SerializedName("timestamp")
     val timestamp: String,
-    @SerialName("token_info_url")
-    @Contextual
+    @SerializedName("token_info_url")
     val tokenInfoUrl: Any,
-    @SerialName("trade_url")
+    @SerializedName("trade_url")
     val tradeUrl: String,
-    @SerialName("trust_score")
+    @SerializedName("trust_score")
     val trustScore: String,
-    @SerialName("volume")
-    val volume: Double
+    @SerializedName("volume")
+    val volume: BigDecimal
 )

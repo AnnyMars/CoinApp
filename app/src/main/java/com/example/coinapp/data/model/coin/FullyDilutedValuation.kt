@@ -1,133 +1,132 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
+import java.math.BigDecimal
 
-@Serializable
 data class FullyDilutedValuation(
-    @SerialName("aed")
-    val aed: Long,
-    @SerialName("ars")
-    val ars: Long,
-    @SerialName("aud")
-    val aud: Long,
-    @SerialName("bch")
-    val bch: Int,
-    @SerialName("bdt")
-    val bdt: Long,
-    @SerialName("bhd")
-    val bhd: Long,
-    @SerialName("bits")
-    val bits: Long,
-    @SerialName("bmd")
-    val bmd: Long,
-    @SerialName("bnb")
-    val bnb: Int,
-    @SerialName("brl")
-    val brl: Long,
-    @SerialName("btc")
-    val btc: Int,
-    @SerialName("cad")
-    val cad: Long,
-    @SerialName("chf")
-    val chf: Long,
-    @SerialName("clp")
-    val clp: Long,
-    @SerialName("cny")
-    val cny: Long,
-    @SerialName("czk")
-    val czk: Long,
-    @SerialName("dkk")
-    val dkk: Long,
-    @SerialName("dot")
-    val dot: Long,
-    @SerialName("eos")
-    val eos: Long,
-    @SerialName("eth")
-    val eth: Int,
-    @SerialName("eur")
-    val eur: Long,
-    @SerialName("gbp")
-    val gbp: Long,
-    @SerialName("gel")
-    val gel: Long,
-    @SerialName("hkd")
-    val hkd: Long,
-    @SerialName("huf")
-    val huf: Long,
-    @SerialName("idr")
-    val idr: Long,
-    @SerialName("ils")
-    val ils: Long,
-    @SerialName("inr")
-    val inr: Long,
-    @SerialName("jpy")
-    val jpy: Long,
-    @SerialName("krw")
-    val krw: Long,
-    @SerialName("kwd")
-    val kwd: Long,
-    @SerialName("link")
-    val link: Long,
-    @SerialName("lkr")
-    val lkr: Long,
-    @SerialName("ltc")
-    val ltc: Long,
-    @SerialName("mmk")
-    val mmk: Long,
-    @SerialName("mxn")
-    val mxn: Long,
-    @SerialName("myr")
-    val myr: Long,
-    @SerialName("ngn")
-    val ngn: Long,
-    @SerialName("nok")
-    val nok: Long,
-    @SerialName("nzd")
-    val nzd: Long,
-    @SerialName("php")
-    val php: Long,
-    @SerialName("pkr")
-    val pkr: Long,
-    @SerialName("pln")
-    val pln: Long,
-    @SerialName("rub")
-    val rub: Long,
-    @SerialName("sar")
-    val sar: Long,
-    @SerialName("sats")
-    val sats: Long,
-    @SerialName("sek")
-    val sek: Long,
-    @SerialName("sgd")
-    val sgd: Long,
-    @SerialName("thb")
-    val thb: Long,
-    @SerialName("try")
-    val tryX: Long,
-    @SerialName("twd")
-    val twd: Long,
-    @SerialName("uah")
-    val uah: Long,
-    @SerialName("usd")
-    val usd: Long,
-    @SerialName("vef")
-    val vef: Long,
-    @SerialName("vnd")
-    val vnd: Long,
-    @SerialName("xag")
-    val xag: Long,
-    @SerialName("xau")
-    val xau: Int,
-    @SerialName("xdr")
-    val xdr: Long,
-    @SerialName("xlm")
-    val xlm: Long,
-    @SerialName("xrp")
-    val xrp: Long,
-    @SerialName("yfi")
-    val yfi: Int,
-    @SerialName("zar")
-    val zar: Long
+    @SerializedName("aed")
+    val aed: BigDecimal,
+    @SerializedName("ars")
+    val ars: BigDecimal,
+    @SerializedName("aud")
+    val aud: BigDecimal,
+    @SerializedName("bch")
+    val bch: BigDecimal,
+    @SerializedName("bdt")
+    val bdt: BigDecimal,
+    @SerializedName("bhd")
+    val bhd: BigDecimal,
+    @SerializedName("bits")
+    val bits: BigDecimal,
+    @SerializedName("bmd")
+    val bmd: BigDecimal,
+    @SerializedName("bnb")
+    val bnb: BigDecimal,
+    @SerializedName("brl")
+    val brl: BigDecimal,
+    @SerializedName("btc")
+    val btc: BigDecimal,
+    @SerializedName("cad")
+    val cad: BigDecimal,
+    @SerializedName("chf")
+    val chf: BigDecimal,
+    @SerializedName("clp")
+    val clp: BigDecimal,
+    @SerializedName("cny")
+    val cny: BigDecimal,
+    @SerializedName("czk")
+    val czk: BigDecimal,
+    @SerializedName("dkk")
+    val dkk: BigDecimal,
+    @SerializedName("dot")
+    val dot: BigDecimal,
+    @SerializedName("eos")
+    val eos: BigDecimal,
+    @SerializedName("eth")
+    val eth: BigDecimal,
+    @SerializedName("eur")
+    val eur: BigDecimal,
+    @SerializedName("gbp")
+    val gbp: BigDecimal,
+    @SerializedName("gel")
+    val gel: BigDecimal,
+    @SerializedName("hkd")
+    val hkd: BigDecimal,
+    @SerializedName("huf")
+    val huf: BigDecimal,
+    @SerializedName("idr")
+    val idr: BigDecimal,
+    @SerializedName("ils")
+    val ils: BigDecimal,
+    @SerializedName("inr")
+    val inr: BigDecimal,
+    @SerializedName("jpy")
+    val jpy: BigDecimal,
+    @SerializedName("krw")
+    val krw: BigDecimal,
+    @SerializedName("kwd")
+    val kwd: BigDecimal,
+    @SerializedName("link")
+    val link: BigDecimal,
+    @SerializedName("lkr")
+    val lkr: BigDecimal,
+    @SerializedName("ltc")
+    val ltc: BigDecimal,
+    @SerializedName("mmk")
+    val mmk: BigDecimal,
+    @SerializedName("mxn")
+    val mxn: BigDecimal,
+    @SerializedName("myr")
+    val myr: BigDecimal,
+    @SerializedName("ngn")
+    val ngn: BigDecimal,
+    @SerializedName("nok")
+    val nok: BigDecimal,
+    @SerializedName("nzd")
+    val nzd: BigDecimal,
+    @SerializedName("php")
+    val php: BigDecimal,
+    @SerializedName("pkr")
+    val pkr: BigDecimal,
+    @SerializedName("pln")
+    val pln: BigDecimal,
+    @SerializedName("rub")
+    val rub: BigDecimal,
+    @SerializedName("sar")
+    val sar: BigDecimal,
+    @SerializedName("sats")
+    val sats: BigDecimal,
+    @SerializedName("sek")
+    val sek: BigDecimal,
+    @SerializedName("sgd")
+    val sgd: BigDecimal,
+    @SerializedName("thb")
+    val thb: BigDecimal,
+    @SerializedName("try")
+    val tryX: BigDecimal,
+    @SerializedName("twd")
+    val twd: BigDecimal,
+    @SerializedName("uah")
+    val uah: BigDecimal,
+    @SerializedName("usd")
+    val usd: BigDecimal,
+    @SerializedName("vef")
+    val vef: BigDecimal,
+    @SerializedName("vnd")
+    val vnd: BigDecimal,
+    @SerializedName("xag")
+    val xag: BigDecimal,
+    @SerializedName("xau")
+    val xau: BigDecimal,
+    @SerializedName("xdr")
+    val xdr: BigDecimal,
+    @SerializedName("xlm")
+    val xlm: BigDecimal,
+    @SerializedName("xrp")
+    val xrp: BigDecimal,
+    @SerializedName("yfi")
+    val yfi: BigDecimal,
+    @SerializedName("zar")
+    val zar: BigDecimal
 )

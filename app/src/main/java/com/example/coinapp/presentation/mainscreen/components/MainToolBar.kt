@@ -12,11 +12,12 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -28,11 +29,22 @@ import com.example.coinapp.ui.theme.robotoFont
 fun MainToolBar(
     onCurrencySelected: (String) -> Unit
 ) {
-
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .statusBarsPadding()
+            .drawBehind {
+                val shadowColor = Color(0xFFA9A9A9)
+                val shadowRadius = 2.dp.toPx()
+                val yOffset = size.height - shadowRadius
+
+                drawRect(
+                    color = shadowColor,
+                    topLeft = Offset(0f, yOffset),
+                    size = Size(size.width, shadowRadius),
+                    alpha = 0.2f
+                )
+            }
     ) {
         Text(
             text = "Список криптовалют",
@@ -75,10 +87,5 @@ fun MainToolBar(
                 shape = RoundedCornerShape(60)
             )
         }
-        HorizontalDivider(
-            thickness = 1.dp,
-            modifier = Modifier
-                .shadow(elevation = 10.dp, ambientColor = Color.Gray)
-        )
     }
 }

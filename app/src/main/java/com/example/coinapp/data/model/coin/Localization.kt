@@ -1,77 +1,75 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Localization(
-    @SerialName("ar")
+    @SerializedName("ar")
     val ar: String,
-    @SerialName("bg")
+    @SerializedName("bg")
     val bg: String,
-    @SerialName("cs")
+    @SerializedName("cs")
     val cs: String,
-    @SerialName("da")
+    @SerializedName("da")
     val da: String,
-    @SerialName("de")
+    @SerializedName("de")
     val de: String,
-    @SerialName("el")
+    @SerializedName("el")
     val el: String,
-    @SerialName("en")
+    @SerializedName("en")
     val en: String,
-    @SerialName("es")
+    @SerializedName("es")
     val es: String,
-    @SerialName("fi")
+    @SerializedName("fi")
     val fi: String,
-    @SerialName("fr")
+    @SerializedName("fr")
     val fr: String,
-    @SerialName("he")
+    @SerializedName("he")
     val he: String,
-    @SerialName("hi")
+    @SerializedName("hi")
     val hi: String,
-    @SerialName("hr")
+    @SerializedName("hr")
     val hr: String,
-    @SerialName("hu")
+    @SerializedName("hu")
     val hu: String,
-    @SerialName("id")
+    @SerializedName("id")
     val id: String,
-    @SerialName("it")
+    @SerializedName("it")
     val `it`: String,
-    @SerialName("ja")
+    @SerializedName("ja")
     val ja: String,
-    @SerialName("ko")
+    @SerializedName("ko")
     val ko: String,
-    @SerialName("lt")
+    @SerializedName("lt")
     val lt: String,
-    @SerialName("nl")
+    @SerializedName("nl")
     val nl: String,
-    @SerialName("no")
+    @SerializedName("no")
     val no: String,
-    @SerialName("pl")
+    @SerializedName("pl")
     val pl: String,
-    @SerialName("pt")
+    @SerializedName("pt")
     val pt: String,
-    @SerialName("ro")
+    @SerializedName("ro")
     val ro: String,
-    @SerialName("ru")
+    @SerializedName("ru")
     val ru: String,
-    @SerialName("sk")
+    @SerializedName("sk")
     val sk: String,
-    @SerialName("sl")
+    @SerializedName("sl")
     val sl: String,
-    @SerialName("sv")
+    @SerializedName("sv")
     val sv: String,
-    @SerialName("th")
+    @SerializedName("th")
     val th: String,
-    @SerialName("tr")
+    @SerializedName("tr")
     val tr: String,
-    @SerialName("uk")
+    @SerializedName("uk")
     val uk: String,
-    @SerialName("vi")
+    @SerializedName("vi")
     val vi: String,
-    @SerialName("zh")
+    @SerializedName("zh")
     val zh: String,
-    @SerialName("zh-tw")
+    @SerializedName("zh-tw")
     val zhTw: String
 )

@@ -1,6 +1,5 @@
 package com.example.coinapp.data.repository
 
-import android.util.Log
 import com.example.coinapp.data.model.coin.Coin
 import com.example.coinapp.data.model.coins.CoinsItem
 import com.example.coinapp.data.remote.CoinApi
@@ -14,7 +13,6 @@ class CoinRepositoryImpl @Inject constructor(
     override suspend fun fetchCoins(currency: String): ResultState<List<CoinsItem>> {
         return try {
             val coins = coinApi.getCoins(currency)
-            Log.d("MyLog", coins.toString())
             ResultState.Success(coins)
         } catch (e: Exception){
             ResultState.Error(e.localizedMessage ?: "Unknown Error")
@@ -22,6 +20,11 @@ class CoinRepositoryImpl @Inject constructor(
     }
 
     override suspend fun fetchCoinById(id: String): ResultState<Coin> {
-        TODO("Not yet implemented")
+        return try {
+            val coin = coinApi.getCoinById(id)
+            ResultState.Success(coin)
+        } catch (e: Exception){
+            ResultState.Error(e.localizedMessage?: "Unknown Error")
+        }
     }
 }

@@ -15,7 +15,7 @@ interface CoinApi {
         @Query("page") page: Int = 1,
     ): List<CoinsItem>
 
-    @GET("/coins/{id}")
+    @GET("coins/{id}")
     suspend fun getCoinById(
         @Path("id") id: String
     ): Coin

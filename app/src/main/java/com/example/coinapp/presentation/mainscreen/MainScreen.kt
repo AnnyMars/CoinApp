@@ -1,5 +1,6 @@
 package com.example.coinapp.presentation.mainscreen
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -12,16 +13,18 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.coinapp.presentation.common.CoinErrorScreen
 import com.example.coinapp.presentation.mainscreen.components.CoinItem
 import com.example.coinapp.presentation.mainscreen.components.MainToolBar
 import com.example.coinapp.presentation.model.toUiModel
 import com.example.coinapp.presentation.utils.ResultState
+import com.example.coinapp.ui.theme.orangeColor
 
 @Composable
-fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
+fun MainScreen(viewModel: MainViewModel, navigateToDetail: (String) -> Unit) {
+
     var selectedCurrency by remember { mutableStateOf("usd") }
 
     LaunchedEffect(selectedCurrency) {
@@ -35,22 +38,34 @@ fun MainScreen(viewModel: MainViewModel = hiltViewModel()) {
     ) {
         MainToolBar(
             onCurrencySelected = { currency ->
-                selectedCurrency = currency
-                viewModel.fetchCoins(currency)
+                if (selectedCurrency != currency) {
+                    selectedCurrency = currency
+                    viewModel.fetchCoins(currency)
+                }
             }
         )
-        when (result){
+        when (result) {
             is ResultState.Error -> {
-                CoinErrorScreen()
+                CoinErrorScreen(onButtonClick = { viewModel.fetchCoins(selectedCurrency) })
             }
+
             ResultState.Loading -> {
-                CircularProgressIndicator()
+                Box(
+                    modifier = Modifier.fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CircularProgressIndicator(color = orangeColor)
+                }
             }
+
             is ResultState.Success -> {
                 val coins = result.data.map { it.toUiModel(selectedCurrency) }
                 LazyColumn {
-                    items(coins){ coin ->
-                        CoinItem(item = coin)
+                    items(coins) { coin ->
+                        CoinItem(
+                            item = coin,
+                            onClick = { coinId -> navigateToDetail(coinId) }
+                        )
                     }
                 }
             }

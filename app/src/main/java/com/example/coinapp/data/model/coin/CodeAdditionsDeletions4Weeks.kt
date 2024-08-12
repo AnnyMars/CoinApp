@@ -1,13 +1,12 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
+import java.math.BigDecimal
 
-@Serializable
 data class CodeAdditionsDeletions4Weeks(
-    @SerialName("additions")
-    val additions: Int,
-    @SerialName("deletions")
-    val deletions: Int
+    @SerializedName("additions")
+    val additions: BigDecimal,
+    @SerializedName("deletions")
+    val deletions: BigDecimal
 )

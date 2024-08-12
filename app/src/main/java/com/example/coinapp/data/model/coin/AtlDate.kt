@@ -1,133 +1,131 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class AtlDate(
-    @SerialName("aed")
+    @SerializedName("aed")
     val aed: String,
-    @SerialName("ars")
+    @SerializedName("ars")
     val ars: String,
-    @SerialName("aud")
+    @SerializedName("aud")
     val aud: String,
-    @SerialName("bch")
+    @SerializedName("bch")
     val bch: String,
-    @SerialName("bdt")
+    @SerializedName("bdt")
     val bdt: String,
-    @SerialName("bhd")
+    @SerializedName("bhd")
     val bhd: String,
-    @SerialName("bits")
+    @SerializedName("bits")
     val bits: String,
-    @SerialName("bmd")
+    @SerializedName("bmd")
     val bmd: String,
-    @SerialName("bnb")
+    @SerializedName("bnb")
     val bnb: String,
-    @SerialName("brl")
+    @SerializedName("brl")
     val brl: String,
-    @SerialName("btc")
+    @SerializedName("btc")
     val btc: String,
-    @SerialName("cad")
+    @SerializedName("cad")
     val cad: String,
-    @SerialName("chf")
+    @SerializedName("chf")
     val chf: String,
-    @SerialName("clp")
+    @SerializedName("clp")
     val clp: String,
-    @SerialName("cny")
+    @SerializedName("cny")
     val cny: String,
-    @SerialName("czk")
+    @SerializedName("czk")
     val czk: String,
-    @SerialName("dkk")
+    @SerializedName("dkk")
     val dkk: String,
-    @SerialName("dot")
+    @SerializedName("dot")
     val dot: String,
-    @SerialName("eos")
+    @SerializedName("eos")
     val eos: String,
-    @SerialName("eth")
+    @SerializedName("eth")
     val eth: String,
-    @SerialName("eur")
+    @SerializedName("eur")
     val eur: String,
-    @SerialName("gbp")
+    @SerializedName("gbp")
     val gbp: String,
-    @SerialName("gel")
+    @SerializedName("gel")
     val gel: String,
-    @SerialName("hkd")
+    @SerializedName("hkd")
     val hkd: String,
-    @SerialName("huf")
+    @SerializedName("huf")
     val huf: String,
-    @SerialName("idr")
+    @SerializedName("idr")
     val idr: String,
-    @SerialName("ils")
+    @SerializedName("ils")
     val ils: String,
-    @SerialName("inr")
+    @SerializedName("inr")
     val inr: String,
-    @SerialName("jpy")
+    @SerializedName("jpy")
     val jpy: String,
-    @SerialName("krw")
+    @SerializedName("krw")
     val krw: String,
-    @SerialName("kwd")
+    @SerializedName("kwd")
     val kwd: String,
-    @SerialName("link")
+    @SerializedName("link")
     val link: String,
-    @SerialName("lkr")
+    @SerializedName("lkr")
     val lkr: String,
-    @SerialName("ltc")
+    @SerializedName("ltc")
     val ltc: String,
-    @SerialName("mmk")
+    @SerializedName("mmk")
     val mmk: String,
-    @SerialName("mxn")
+    @SerializedName("mxn")
     val mxn: String,
-    @SerialName("myr")
+    @SerializedName("myr")
     val myr: String,
-    @SerialName("ngn")
+    @SerializedName("ngn")
     val ngn: String,
-    @SerialName("nok")
+    @SerializedName("nok")
     val nok: String,
-    @SerialName("nzd")
+    @SerializedName("nzd")
     val nzd: String,
-    @SerialName("php")
+    @SerializedName("php")
     val php: String,
-    @SerialName("pkr")
+    @SerializedName("pkr")
     val pkr: String,
-    @SerialName("pln")
+    @SerializedName("pln")
     val pln: String,
-    @SerialName("rub")
+    @SerializedName("rub")
     val rub: String,
-    @SerialName("sar")
+    @SerializedName("sar")
     val sar: String,
-    @SerialName("sats")
+    @SerializedName("sats")
     val sats: String,
-    @SerialName("sek")
+    @SerializedName("sek")
     val sek: String,
-    @SerialName("sgd")
+    @SerializedName("sgd")
     val sgd: String,
-    @SerialName("thb")
+    @SerializedName("thb")
     val thb: String,
-    @SerialName("try")
+    @SerializedName("try")
     val tryX: String,
-    @SerialName("twd")
+    @SerializedName("twd")
     val twd: String,
-    @SerialName("uah")
+    @SerializedName("uah")
     val uah: String,
-    @SerialName("usd")
+    @SerializedName("usd")
     val usd: String,
-    @SerialName("vef")
+    @SerializedName("vef")
     val vef: String,
-    @SerialName("vnd")
+    @SerializedName("vnd")
     val vnd: String,
-    @SerialName("xag")
+    @SerializedName("xag")
     val xag: String,
-    @SerialName("xau")
+    @SerializedName("xau")
     val xau: String,
-    @SerialName("xdr")
+    @SerializedName("xdr")
     val xdr: String,
-    @SerialName("xlm")
+    @SerializedName("xlm")
     val xlm: String,
-    @SerialName("xrp")
+    @SerializedName("xrp")
     val xrp: String,
-    @SerialName("yfi")
+    @SerializedName("yfi")
     val yfi: String,
-    @SerialName("zar")
+    @SerializedName("zar")
     val zar: String
 )

@@ -1,14 +1,11 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.Contextual
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class ReposUrl(
-    @SerialName("bitbucket")
-    val bitbucket: List<@Contextual Any>?,
-    @SerialName("github")
+    @SerializedName("bitbucket")
+    val bitbucket: List<Any>,
+    @SerializedName("github")
     val github: List<String>
 )

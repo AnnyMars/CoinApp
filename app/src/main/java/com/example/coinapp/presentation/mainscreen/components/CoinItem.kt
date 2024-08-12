@@ -22,18 +22,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import coil.request.CachePolicy
 import coil.request.ImageRequest
 import com.example.coinapp.presentation.model.CoinsUiModel
 import com.example.coinapp.ui.theme.robotoFont
 
 @Composable
-fun CoinItem(item: CoinsUiModel) {
+fun CoinItem(item: CoinsUiModel, onClick: (String) -> Unit) {
 
     val context = LocalContext.current
 
+
     Card(
         modifier = Modifier.fillMaxWidth(),
-        onClick = { /*TODO*/ },
+        onClick = { onClick(item.id) },
         colors = CardDefaults.cardColors().copy(containerColor = Color.White),
         shape = RectangleShape
     ) {
@@ -42,7 +44,9 @@ fun CoinItem(item: CoinsUiModel) {
         ) {
             AsyncImage(
                 modifier = Modifier.size(40.dp),
-                model = ImageRequest.Builder(context).data(item.image).build(),
+                model = ImageRequest.Builder(context).data(item.image)
+                    .crossfade(true)
+                    .diskCachePolicy(CachePolicy.ENABLED).build(),
                 contentDescription = ""
             )
             Spacer(modifier = Modifier.width(5.dp))

@@ -1,15 +1,14 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
+import java.math.BigDecimal
 
-@Serializable
 data class ConvertedVolume(
-    @SerialName("btc")
-    val btc: Double,
-    @SerialName("eth")
-    val eth: Double,
-    @SerialName("usd")
-    val usd: Int
+    @SerializedName("btc")
+    val btc: BigDecimal,
+    @SerializedName("eth")
+    val eth: BigDecimal,
+    @SerializedName("usd")
+    val usd: BigDecimal
 )

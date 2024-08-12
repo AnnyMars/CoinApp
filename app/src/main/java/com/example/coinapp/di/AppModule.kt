@@ -1,9 +1,10 @@
 package com.example.coinapp.di
 
+import com.example.coinapp.data.remote.AuthInterceptor
 import com.example.coinapp.data.remote.CoinApi
 import com.example.coinapp.data.repository.CoinRepositoryImpl
 import com.example.coinapp.domain.repository.CoinRepository
-import com.example.coinapp.presentation.utils.Constants.BASE_URL
+import com.example.coinapp.utils.Constants.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +31,7 @@ object AppModule {
     fun providesOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor) =
         OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
+            .addInterceptor(AuthInterceptor())
             .build()
 
     @Singleton

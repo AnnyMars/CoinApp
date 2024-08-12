@@ -1,11 +1,9 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class DetailPlatforms(
-    @SerialName("")
+    @SerializedName("")
     val x: X
 )

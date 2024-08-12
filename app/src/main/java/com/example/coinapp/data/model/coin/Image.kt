@@ -1,15 +1,13 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Image(
-    @SerialName("large")
+    @SerializedName("large")
     val large: String,
-    @SerialName("small")
+    @SerializedName("small")
     val small: String,
-    @SerialName("thumb")
+    @SerializedName("thumb")
     val thumb: String
 )

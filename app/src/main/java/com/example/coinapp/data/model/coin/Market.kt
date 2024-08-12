@@ -1,15 +1,13 @@
 package com.example.coinapp.data.model.coin
 
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+import com.google.gson.annotations.SerializedName
 
-@Serializable
 data class Market(
-    @SerialName("has_trading_incentive")
+    @SerializedName("has_trading_incentive")
     val hasTradingIncentive: Boolean,
-    @SerialName("identifier")
+    @SerializedName("identifier")
     val identifier: String,
-    @SerialName("name")
+    @SerializedName("name")
     val name: String
 )

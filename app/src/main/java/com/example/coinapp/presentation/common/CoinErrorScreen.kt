@@ -13,7 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.SpanStyle
@@ -21,14 +20,14 @@ import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.coinapp.R
+import com.example.coinapp.ui.theme.orangeColor
 import com.example.coinapp.ui.theme.robotoFont
 
 @Composable
-fun CoinErrorScreen() {
+fun CoinErrorScreen(onButtonClick: () -> Unit) {
 
     val text = buildAnnotatedString {
         withStyle(
@@ -68,9 +67,9 @@ fun CoinErrorScreen() {
         )
         Spacer(modifier = Modifier.height(20.dp))
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { onButtonClick() },
             shape = RoundedCornerShape(10),
-            colors = ButtonDefaults.buttonColors().copy(containerColor = Color(0xFFFF9F00))
+            colors = ButtonDefaults.buttonColors().copy(containerColor = orangeColor)
         ) {
             Text(
                 modifier = Modifier.padding(horizontal = 20.dp),
@@ -79,10 +78,4 @@ fun CoinErrorScreen() {
         }
         Spacer(modifier = Modifier.weight(1f))
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewCoinErrorScreen() {
-    CoinErrorScreen()
 }
