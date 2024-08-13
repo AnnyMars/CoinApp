@@ -70,6 +70,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //UI
+    implementation (libs.androidx.material)
+    implementation (libs.accompanist.swiperefresh)
+
     //Navigation
     implementation (libs.androidx.navigation.compose)
 

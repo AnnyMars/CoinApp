@@ -20,10 +20,16 @@ class MainViewModel @Inject constructor(
     private val _coinsState = MutableStateFlow<ResultState<List<CoinsItem>>>(ResultState.Loading)
     val coinsState: StateFlow<ResultState<List<CoinsItem>>> = _coinsState
 
+    private val _isRefreshing = MutableStateFlow(false)
+    val isRefreshing: StateFlow<Boolean> = _isRefreshing
+
+
     fun fetchCoins(currency: String) {
         viewModelScope.launch(Dispatchers.IO) {
+            _isRefreshing.value = true
             _coinsState.value = ResultState.Loading
             _coinsState.value = repository.fetchCoins(currency)
+            _isRefreshing.value = false
         }
     }
 
